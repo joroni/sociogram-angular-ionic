@@ -13,7 +13,12 @@ A sample application that demonstrates a lightweight approach to integrate with 
 
 3. Replace the www folder of the Ionic project with the www folder in this repository
 
-4. Create a Facebook app here: https://developers.facebook.com/apps. In the advanced settings, make sure you declare a “Valid OAuth redirect URI”. For example, if during development you access your application from http://localhost/openfb/index.html, you must declare http://localhost/openfb/oauthcallback.html as a valid redirect URI. Also add https://www.facebook.com/connect/login_success.html as a Valid OAuth redirect URI for access from Cordova.
+4. Create a Facebook app here: https://developers.facebook.com/apps.
+5. Config the Facebook app. If you're using default Ionic setup, follow the following steps; if not, change `http://localhost:8100/` to your local path to your `index.html`.
+    * Go to "Basic". Set "Site URL" to `http://localhost:8100/`
+    * Go to "Advanced". Add these two urls to "Valid OAuth redirect URIs":
+        - `https://www.facebook.com/connect/login_success.html` (for access from Cordova)
+        - `http://localhost:8100/oauthcallback.html` (for access from local machine)
 
 5. Copy the Facebook App Id and paste it as the first argument of the OpenFB.init() method invocation in the run() function in app.js.
 
